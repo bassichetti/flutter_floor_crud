@@ -23,6 +23,8 @@ class HomePage extends StatelessWidget {
                       borderRadius: BorderRadius.all(Radius.circular(30))),
                   child: Container(
                     width: 300,
+                    height: 45,
+                    padding: EdgeInsets.only(top: 15),
                     child: Text(
                       'Cadastrar dados',
                       style: TextStyle(
@@ -57,6 +59,8 @@ class HomePage extends StatelessWidget {
                       )),
                   child: Container(
                     width: 300,
+                    height: 45,
+                    padding: EdgeInsets.only(top: 15),
                     child: Text(
                       'Listar dados',
                       style: TextStyle(
