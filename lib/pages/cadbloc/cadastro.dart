@@ -20,6 +20,7 @@ class _CadastroState extends State<Cadastro> {
   @override
   Widget build(BuildContext context) {
     final dataBloc = BlocProvider.of<DataBloc>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Floor CRUD - Register'),
@@ -40,6 +41,7 @@ class _CadastroState extends State<Cadastro> {
           builder: (context, state) {
             if (state is Initial) {
               return Container(
+                height: MediaQuery.of(context).size.height,
                 padding: EdgeInsets.only(left: 32, right: 32),
                 child: Form(
                   key: _formKey,
@@ -56,7 +58,7 @@ class _CadastroState extends State<Cadastro> {
                         controller: firstnamecontroller,
                         // The validator receives the text that the user has entered.
                         validator: (value) {
-                          if (value.isEmpty) {
+                          if (value.contains('')) {
                             return 'Please enter your firt name';
                           }
                           return null;
@@ -123,63 +125,4 @@ class _CadastroState extends State<Cadastro> {
     bool result = await pessoaService.insertDataPessoa(pessoa);
     print(result);
   }*/
-
-  _body() {
-    return Container(
-      padding: EdgeInsets.only(left: 32, right: 32),
-      child: Form(
-        key: _formKey,
-        child: Column(
-          children: [
-            SizedBox(
-              height: 100,
-            ),
-            TextFormField(
-              decoration: InputDecoration(
-                hintText: 'First name',
-                labelText: 'First name',
-              ),
-              controller: firstnamecontroller,
-              // The validator receives the text that the user has entered.
-              validator: (value) {
-                if (value.isEmpty) {
-                  return 'Please enter your firt name';
-                }
-                return null;
-              },
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            TextFormField(
-              decoration: InputDecoration(
-                hintText: 'Second name',
-                labelText: 'Second name',
-              ),
-              controller: secondnamecontroller,
-              // The validator receives the text that the user has entered.
-              validator: (value) {
-                if (value.isEmpty) {
-                  return 'Please enter your second name';
-                }
-                return null;
-              },
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                if (_formKey.currentState.validate()) {
-                  //_cadastrarPessoa();
-                  //Navigator.of(context).pop();
-                }
-              },
-              child: Text('Submit'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 }
