@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -34,7 +35,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.of(context).pushNamed('/cadastro');
+                    //Navigator.of(context).pushNamed('/cadastro');
                   },
                 ),
               ],

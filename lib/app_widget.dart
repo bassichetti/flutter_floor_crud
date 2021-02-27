@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_floor_crud/pages/cadastro.dart';
+import 'package:flutter_floor_crud/pages/cadastro_bloc.dart';
 import 'package:flutter_floor_crud/pages/home_page.dart';
 import 'package:flutter_floor_crud/pages/listagem.dart';
 
@@ -15,7 +16,7 @@ class App extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: CadastroBloc(),
       routes: <String, WidgetBuilder>{
         '/cadastro': (BuildContext context) => new Cadastro(),
         '/listagem': (BuildContext context) => new Listagem(),
